@@ -1,0 +1,18 @@
+    // Autofocus
+    $('form :input:not(button):first').focus();
+    $('.err:first').prev().focus();
+    $('.err:first').prev().find(':input:first').focus();
+
+    // Reset form
+    $('[type=reset]').on('click', e => {
+        e.preventDefault();
+        location = location;
+    });
+
+    // Auto uppercase
+    $('[data-upper]').on('input', e => {
+        const a = e.target.selectionStart;
+        const b = e.target.selectionEnd;
+        e.target.value = e.target.value.toUpperCase();
+        e.target.setSelectionRange(a, b);
+    });
